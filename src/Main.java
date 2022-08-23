@@ -17,6 +17,23 @@ public class Main {
         return phoneYear;
     }
 
+    // task 3
+
+    static int deliveryRange() {
+        int day;
+        int deliveryDistance = 95;
+        for (day = 0; day < deliveryDistance; day++);
+
+        if (deliveryDistance < 20)
+            day=0;
+            else if (deliveryDistance >= 20 && < 60)
+                day=day+1;
+                else (deliveryDistance >=60 && <=100)
+                   day=day+2;
+        return day;}
+
+
+
     public static void main(String[] args) {
 
         System.out.println("Задание 1");
@@ -37,15 +54,25 @@ public class Main {
             } else if (operationSystem() == 0 && productionYear() >= currentYear) {
                 System.out.println("Установите полную версию iOS ");
             }
-            if (operationSystem() == 1 && productionYear() < 2015) {
+            if (operationSystem() == 1 && productionYear() < currentYear) {
                 System.out.println("Установите облегченную версию Android ");
             } else if (operationSystem() == 1 && productionYear() >= currentYear) {
                 System.out.println("Установите полную версию Android ");
             }
         }
 
+        System.out.println("Задание 3");
+        {
+
+            System.out.println(deliveryRange());
+//        if (deliveryRange()<20) {
+//            System.out.println ("срок доставки" + deliveryRange(int day) +"день");
+        }
+
+
+        }
 
 
     }
-}
+
 
