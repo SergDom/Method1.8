@@ -19,17 +19,14 @@ public class Main {
 
     // task 3
 
-    static int deliveryRange() {
-        int deliveryDistance = 95;
-        int day;
-//        for (day = 0; day < deliveryDistance; day++);
-
-        if (deliveryDistance < 20)
-            day=0;
-            else if (deliveryDistance >= 20 && deliveryDistance< 60)
-                day=2;
-                else (deliveryDistance >=60 && deliveryDistance <=100)
-                   day=3;
+    static int deliveryRange(int d1) {
+        int day=0;
+        if (d1 < 20)
+            day=day+1;
+            else if (d1 >= 20 && d1< 60)
+                day=day+2;
+                else if (d1 >=60 && d1 <=100)
+                   day=day+3;
         return day;}
 
 
@@ -63,10 +60,8 @@ public class Main {
 
         System.out.println("Задание 3");
         {
+            System.out.println("Потребуется дней: " + deliveryRange(50));
 
-            System.out.println(deliveryRange());
-//        if (deliveryRange()<20) {
-//            System.out.println ("срок доставки" + deliveryRange(int day) +"день");
         }
 
 
