@@ -2,26 +2,22 @@ import java.time.LocalDate;
 
 public class Main {
 
-    // task 1
+
     static int checkingYear () {
         int currentYear = 2022;
         return currentYear;}
 
     // task 2
     static int operationSystem() {
-        int operationSystem = 0; // iOS=0, Android=1
-        int phoneYear = 2015;
-        if (operationSystem == 0 && phoneYear < 2015) {
-            String liteIos = "Установите облегченную версию iOS ";}
-         else if (operationSystem == 0 && phoneYear >= 2015) {
-            String fullIos = "Установите полную версию iOS ";}
-
-            return liteIos;}
-
-
+        int system=0; // iOs=0, Android=1.
+        return system;
+    }
+    static int productionYear() {
+        int phoneYear = 2021;
+        return phoneYear;
+    }
 
     public static void main(String[] args) {
-
 
         System.out.println("Задание 1");
         {
@@ -33,16 +29,17 @@ public class Main {
         System.out.println("Задание 2");
         {
             int currentYear = LocalDate.now().getYear();
+
             System.out.println();
 
-            if (clientSystem == 0 && clientDeviceYear < 2015) {
+            if ( operationSystem() == 0 && productionYear() < currentYear) {
                 System.out.println("Установите облегченную версию iOS ");
-            } else if (clientSystem == 0 && clientDeviceYear >= 2015) {
+            } else if (operationSystem() == 0 && productionYear() >= currentYear) {
                 System.out.println("Установите полную версию iOS ");
             }
-            if (clientSystem == 1 && clientDeviceYear < 2015) {
+            if (operationSystem() == 1 && productionYear() < 2015) {
                 System.out.println("Установите облегченную версию Android ");
-            } else if (clientSystem == 1 && clientDeviceYear >= 2015) {
+            } else if (operationSystem() == 1 && productionYear() >= currentYear) {
                 System.out.println("Установите полную версию Android ");
             }
         }
