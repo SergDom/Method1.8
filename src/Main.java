@@ -20,16 +20,16 @@ public class Main {
     // task 3
 
     static int deliveryRange() {
-        int day;
         int deliveryDistance = 95;
-        for (day = 0; day < deliveryDistance; day++);
+        int day;
+//        for (day = 0; day < deliveryDistance; day++);
 
         if (deliveryDistance < 20)
             day=0;
-            else if (deliveryDistance >= 20 && < 60)
-                day=day+1;
-                else (deliveryDistance >=60 && <=100)
-                   day=day+2;
+            else if (deliveryDistance >= 20 && deliveryDistance< 60)
+                day=2;
+                else (deliveryDistance >=60 && deliveryDistance <=100)
+                   day=3;
         return day;}
 
 
