@@ -2,22 +2,23 @@ import java.time.LocalDate;
 
 public class Main {
 
-
+    // task 1
     static int checkingYear (int a) {
         int currentYear = a;
         return currentYear;}
 
     // task 2
-    static int operationSystem() {
-        int system=0; // iOs=0, Android=1.
-        return system;
+    static int receiveOs(String name) {
+        if (name.equals("IoS")) {
+            return 0;
+        } else {
+            return 1;}
     }
-    static int productionYear() {
-        int phoneYear = 2021;
-        return phoneYear;
-    }
-
     // task 3
+    static int productionYear (int a) {
+        int phone = a;
+        return phone;
+    }
 
     static int deliveryRange(int d) {
         int day=0;
@@ -30,10 +31,9 @@ public class Main {
         return day;}
 
 
-
     public static void main(String[] args) {
 
-        System.out.println("\nЗадание 1");
+        System.out.println("Задание 1");
         {
             int year = 2021;
             int review = checkingYear(year);
@@ -42,39 +42,40 @@ public class Main {
             System.out.println(review + " - високосный год");
            else System.out.println(review + " - не високосный год");
         }
+        System.out.println();
 
-        System.out.println("\nЗадание 2");
+        System.out.println("Задание 2");
         {
             int currentYear = LocalDate.now().getYear();
+            String operationSystem = "Andriod";
+            int phoneOs = receiveOs(operationSystem);
+            int year = 2022;
+            int phoneYear = productionYear(year);
 
-            System.out.println();
-
-            if ( operationSystem() == 0 && productionYear() < currentYear) {
+            if (phoneOs == 0  && phoneYear < currentYear) {
                 System.out.println("Установите облегченную версию iOS ");
-            } else if (operationSystem() == 0 && productionYear() >= currentYear) {
+            } else if (phoneOs == 0 && phoneYear  >= currentYear) {
                 System.out.println("Установите полную версию iOS ");
             }
-            if (operationSystem() == 1 && productionYear() < currentYear) {
+            if (phoneOs == 1 && phoneYear < currentYear) {
                 System.out.println("Установите облегченную версию Android ");
-            } else if (operationSystem() == 1 && productionYear() >= currentYear) {
+            } else if (phoneOs== 1 && phoneYear >= currentYear) {
                 System.out.println("Установите полную версию Android ");
             }
         }
+        System.out.println();
 
-        System.out.println("\nЗадание 3");
+        System.out.println("Задание 3");
         {
             int distance = 20;
             int check = deliveryRange(distance);
             if (distance < 20)
             System.out.println("Потребуется: " + check + " день");
             else if (distance >= 20)
-            System.out.println("Потребуется: " + check + " дня") ;
-
+            System.out.println("Потребуется: " + check + " дня");
         }
 
-
         }
-
 
     }
 
