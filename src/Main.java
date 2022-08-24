@@ -3,8 +3,8 @@ import java.time.LocalDate;
 public class Main {
 
 
-    static int checkingYear () {
-        int currentYear = 2022;
+    static int checkingYear (int a) {
+        int currentYear = a;
         return currentYear;}
 
     // task 2
@@ -19,13 +19,13 @@ public class Main {
 
     // task 3
 
-    static int deliveryRange(int d1) {
+    static int deliveryRange(int d) {
         int day=0;
-        if (d1 < 20)
+        if (d < 20)
             day=day+1;
-            else if (d1 >= 20 && d1< 60)
+            else if (d >= 20 && d< 60)
                 day=day+2;
-                else if (d1 >=60 && d1 <=100)
+                else if (d >=60 && d <=100)
                    day=day+3;
         return day;}
 
@@ -33,14 +33,17 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("Задание 1");
+        System.out.println("\nЗадание 1");
         {
-            if (checkingYear() % 4 == 0 && checkingYear() % 100 != 0 || (checkingYear() % 400 == 0))
-                System.out.println(checkingYear() + " - високосный год");
-            else System.out.println(checkingYear() + " - не високосный год");
+            int year = 2021;
+            int review = checkingYear(year);
+
+            if (review % 4 == 0 && review % 100 != 0 || (review % 400 == 0))
+            System.out.println(review + " - високосный год");
+           else System.out.println(review + " - не високосный год");
         }
 
-        System.out.println("Задание 2");
+        System.out.println("\nЗадание 2");
         {
             int currentYear = LocalDate.now().getYear();
 
@@ -58,9 +61,14 @@ public class Main {
             }
         }
 
-        System.out.println("Задание 3");
+        System.out.println("\nЗадание 3");
         {
-            System.out.println("Потребуется дней: " + deliveryRange(50));
+            int distance = 20;
+            int check = deliveryRange(distance);
+            if (distance < 20)
+            System.out.println("Потребуется: " + check + " день");
+            else if (distance >= 20)
+            System.out.println("Потребуется: " + check + " дня") ;
 
         }
 
