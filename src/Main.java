@@ -3,9 +3,14 @@ import java.time.LocalDate;
 public class Main {
 
     // task 1
-    static int checkingYear (int a) {
-        int currentYear = a;
-        return currentYear;}
+    static void checkingYear (int year) {
+
+        boolean checkingYear = true;
+        if (year % 4 == 0 && year % 100 != 0 || (year % 400 == 0))
+            System.out.println(year + " - високосный год");
+            else System.out.println(year + " - не високосный год");
+    }
+
 
     // task 2
     static int receiveOs(String name) {
@@ -35,12 +40,12 @@ public class Main {
 
         System.out.println("Задание 1");
         {
-            int year = 2021;
-            int review = checkingYear(year);
 
-            if (review % 4 == 0 && review % 100 != 0 || (review % 400 == 0))
-            System.out.println(review + " - високосный год");
-           else System.out.println(review + " - не високосный год");
+            checkingYear(2021);
+
+//            if (review % 4 == 0 && review % 100 != 0 || (review % 400 == 0))
+//            System.out.println(review + " - високосный год");
+//           else System.out.println(review + " - не високосный год");
         }
         System.out.println();
 
