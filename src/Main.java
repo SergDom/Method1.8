@@ -11,7 +11,6 @@ public class Main {
             else System.out.println(year + " - не високосный год");
     }
 
-
     // task 2
     static int receiveOs(String name) {
         if (name.equals("IoS")) {
@@ -19,19 +18,18 @@ public class Main {
         } else {
             return 1;}
     }
-    // task 3
-    static int productionYear (int a) {
-        int phone = a;
-        return phone;
+    static boolean productionYear (int product) {
+        if (product <= LocalDate.now().getYear()) return false;
+        else return true;
     }
-
-    static int deliveryRange(int d) {
+    // task 3
+    static int deliveryDay(int distance) {
         int day=0;
-        if (d < 20)
+        if (distance < 20)
             day=day+1;
-            else if (d >= 20 && d< 60)
+            else if (distance >= 20 && distance< 60)
                 day=day+2;
-                else if (d >=60 && d <=100)
+                else if (distance >=60 && distance <=100)
                    day=day+3;
         return day;}
 
@@ -43,8 +41,8 @@ public class Main {
 
             checkingYear(2021);
 
-//            if (review % 4 == 0 && review % 100 != 0 || (review % 400 == 0))
-//            System.out.println(review + " - високосный год");
+//           if (review % 4 == 0 && review % 100 != 0 || (review % 400 == 0))
+//           System.out.println(review + " - високосный год");
 //           else System.out.println(review + " - не високосный год");
         }
         System.out.println();
@@ -52,19 +50,18 @@ public class Main {
         System.out.println("Задание 2");
         {
             int currentYear = LocalDate.now().getYear();
-            String operationSystem = "Andriod";
-            int phoneOs = receiveOs(operationSystem);
-            int year = 2022;
-            int phoneYear = productionYear(year);
+            int phoneOs = receiveOs("Android");
+            int year = 2011;
+            boolean phoneYear = productionYear(year);
 
-            if (phoneOs == 0  && phoneYear < currentYear) {
+            if (phoneOs == 0  && phoneYear) {
                 System.out.println("Установите облегченную версию iOS ");
-            } else if (phoneOs == 0 && phoneYear  >= currentYear) {
+            } else if (phoneOs == 0 && phoneYear) {
                 System.out.println("Установите полную версию iOS ");
             }
-            if (phoneOs == 1 && phoneYear < currentYear) {
+            if (phoneOs == 1 && phoneYear) {
                 System.out.println("Установите облегченную версию Android ");
-            } else if (phoneOs== 1 && phoneYear >= currentYear) {
+            } else if (phoneOs== 1 && phoneYear) {
                 System.out.println("Установите полную версию Android ");
             }
         }
@@ -73,7 +70,7 @@ public class Main {
         System.out.println("Задание 3");
         {
             int distance = 20;
-            int check = deliveryRange(distance);
+            int check = deliveryDay(distance);
             if (distance < 20)
             System.out.println("Потребуется: " + check + " день");
             else if (distance >= 20)
