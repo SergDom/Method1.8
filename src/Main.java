@@ -19,8 +19,8 @@ public class Main {
             return 1;}
     }
     static boolean productionYear (int product) {
-        if (product <= LocalDate.now().getYear()) return false;
-        else return true;
+        if (product >= LocalDate.now().getYear()) return true;
+        else return false;
     }
     // task 3
     static int deliveryDay(int distance) {
@@ -50,18 +50,18 @@ public class Main {
         System.out.println("Задание 2");
         {
             int currentYear = LocalDate.now().getYear();
-            int phoneOs = receiveOs("Android");
-            int year = 2011;
+            int phoneOs = receiveOs("IoS");
+            int year = 202;
             boolean phoneYear = productionYear(year);
 
-            if (phoneOs == 0  && phoneYear) {
+            if (phoneOs == 0  && !phoneYear ) {
                 System.out.println("Установите облегченную версию iOS ");
             } else if (phoneOs == 0 && phoneYear) {
                 System.out.println("Установите полную версию iOS ");
             }
             if (phoneOs == 1 && phoneYear) {
                 System.out.println("Установите облегченную версию Android ");
-            } else if (phoneOs== 1 && phoneYear) {
+            } else if (phoneOs== 1 && !phoneYear) {
                 System.out.println("Установите полную версию Android ");
             }
         }
